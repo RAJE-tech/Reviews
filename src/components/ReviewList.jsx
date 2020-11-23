@@ -30,7 +30,7 @@ function ReviewList({ productId }) {
     const displayed = reviews.slice(0, count);
     setDisplayedReviews(displayed);
     setFilterApplied([]);
-  }
+  };
 
   const handleHelpfulnessArray = (event) => {
     setHelpfulnessArray((helpfulnessArray) => [...helpfulnessArray, event]);
@@ -45,21 +45,20 @@ function ReviewList({ productId }) {
     const currentStar = parseInt(event);
     const result = reviews.filter((rating) => rating.rating === currentStar);
 
-    if (filterApplied.length > 0) { // checking to see if a star was alread clicked on
-
-      let hasReset = false; // what does has reset do??
-      filterApplied.map((rating, i) => { // iterating the stars that have been clicked
-        if (rating === currentStar) { // if the clicked star has aleady been clicked once
+    if (filterApplied.length > 0) {
+      let hasReset = false;
+      filterApplied.map((rating, i) => {
+        if (rating === currentStar) {
           const spliced = filterApplied;
-          spliced.splice(i, 1); // remove that star from filter applied
-          const displayed = reviews.slice(0, count); // this is what resets it after unclicking on star rating, need to adjust this
-          hasReset = true; // not sure what this is for, it is a flag for something
+          spliced.splice(i, 1);
+          const displayed = reviews.slice(0, count);
+          hasReset = true;
           setFilterApplied(spliced);
-          return setDisplayedReviews(displayed); // resets star search
+          return setDisplayedReviews(displayed);
         }
       });
       if (hasReset === false) {
-        setFilterApplied([...filterApplied, currentStar]); // add star review search if more than 1 star is selected
+        setFilterApplied([...filterApplied, currentStar]);
         return setDisplayedReviews(displayedReviews.concat(result));
       }
     } else {
