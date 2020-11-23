@@ -23,7 +23,7 @@ function FormInputs(props) {
     props.onHide();
     axios({
       method: 'post',
-      url: 'http://52.26.193.201:3000/reviews/1',
+      url: 'http://52.26.193.201:3000/reviews/2',
       data: {
         rating: state.rating,
         summary: state.summary,

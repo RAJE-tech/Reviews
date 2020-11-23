@@ -37,14 +37,11 @@ function ReviewList({ productId }) {
   };
 
   const changeSortingType = (event) => {
-    console.log('insidehandle change');
     const searchType = event.target.value;
     setSortedBy(searchType);
-    console.log(sortedBy);
   };
 
   function sortStarRatings(event) {
-    console.log('reviews', reviews);
     const currentStar = parseInt(event);
     const result = reviews.filter((rating) => rating.rating === currentStar);
 

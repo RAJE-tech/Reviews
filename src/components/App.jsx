@@ -9,7 +9,7 @@ import ReviewList from './ReviewList.jsx';
 import { exampleReview, exampleRating } from './exampleReview.js';
 
 
-const productId = 1;
+const productId = 45;
 
 function App() {
   return (

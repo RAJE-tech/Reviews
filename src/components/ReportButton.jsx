@@ -7,8 +7,8 @@ function ReportButton(props) {
   const [id] = useState(props.review.review_id);
 
 
-  function deleteReview(id) {
-    const review = id.target.name;
+  function deleteReview(event) {
+    const review = event.target.name;
     console.log(review);
     axios({
       method: 'put',

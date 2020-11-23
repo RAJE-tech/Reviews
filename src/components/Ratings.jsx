@@ -38,7 +38,6 @@ function Ratings({
   }, []);
 
   const starClick = (event) => {
-    console.log('starClick');
     setShowClicked([...showClicked, event]);
   };
 
